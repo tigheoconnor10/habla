@@ -1,0 +1,6 @@
+name = "habla-api"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# To set your Anthropic API key, run:
+#   wrangler secret put ANTHROPIC_API_KEY

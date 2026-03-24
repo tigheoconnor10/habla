@@ -4,16 +4,18 @@ Learn Spanish by reading real news articles. Tap words to look up context and sa
 
 ## Files
 
-- `worker.js` — Cloudflare Worker entry point, routes requests
-- `feeds.js` — RSS fetching and parsing logic
-- `analyze.js` — Claude API calls for phrase lookup
-- `app.html.js` — The entire frontend app (HTML/CSS/JS)
+- `worker.js` — Cloudflare Worker entry point and current source of truth for the app
+- `feeds.js` — older split-out RSS helper, not wired into Wrangler
+- `analyze.js` — older split-out Anthropic helper, not wired into Wrangler
+- `app.html.js` — older split-out frontend file, not wired into Wrangler
 
 ## Making changes
 
-**To change the UI:** edit `app.html.js`
-**To add a news source:** edit the `SOURCES` object in `feeds.js`
-**To change how phrases are explained:** edit the prompt in `analyze.js`
+**To change the deployed app:** edit `worker.js`
+**To add a news source:** edit the `RSS_SOURCES` object in `worker.js`
+**To change how phrases are explained:** edit the prompts in `worker.js`
+
+The split files are left here as reference only. Wrangler serves `worker.js` directly via `main = "worker.js"`.
 
 ## Setup
 

@@ -193,7 +193,7 @@ async function analyzeContent(content, apiKey, modelName) {
       "anthropic-version": "2023-06-01"
     },
     body: JSON.stringify({
-      model: modelName || "claude-sonnet-4-6",
+      model: modelName || "claude-haiku-4-5-20251001",
       max_tokens: 1024,
       temperature: 0.2,
       messages: [
@@ -234,7 +234,7 @@ async function lookupVocab(word, context, apiKey) {
       "anthropic-version": "2023-06-01"
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-6",
+      model: "claude-haiku-4-5-20251001",
       max_tokens: 300,
       temperature: 0.2,
       messages: [{
